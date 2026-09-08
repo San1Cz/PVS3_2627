@@ -1,5 +1,6 @@
 package Vlastní.basics;
 
+import fileworks.DataExport;
 import fileworks.DataImport;
 
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class ParseFile {
         }*/
     Country czechia = new Country("Czech Republic","Europe",10800000,85.0);
         System.out.println(czechia);
-
+        DataExport de = new DataExport("output.txt");
 
         // TODO: Vypsat všechny řádky jako objekty (třídy Country)
         //1. přečíst soubor
@@ -43,10 +44,15 @@ public class ParseFile {
             double avgAge = Double.parseDouble(tokens[3]);
             Country oneCountry = new Country(name, continent,population,avgAge);
             System.out.println(oneCountry);
+            if ((oneCountry.continent).equals("Europe")){
+                de.writeLine(oneCountry.toString());
+            }
         }
 
 
         di.finishImport();
+        de.finishExport();
+
     }
 
 }
