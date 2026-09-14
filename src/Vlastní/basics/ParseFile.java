@@ -48,15 +48,16 @@ public class ParseFile {
             System.out.println(oneCountry);
             if ((oneCountry.continent).equals("Europe")){
                 de.writeLine(oneCountry.toString());
-                if (oneCountry.avgAge > bestAge.avgAge){
-                    bestAge = oneCountry;
-                }
 
-                if (oneCountry.population < worstPopulation.population){
-                    worstPopulation = oneCountry;
-                }
 
                 System.out.println(oneCountry);
+            }
+            if (oneCountry.avgAge > bestAge.avgAge){
+                bestAge = oneCountry;
+            }
+
+            if (oneCountry.population < worstPopulation.population){
+                worstPopulation = oneCountry;
             }
         }
 
