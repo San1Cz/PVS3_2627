@@ -9,6 +9,8 @@ public class ParseFile {
     public static void main(String[] args) throws IOException {
         String path = "data/countries.txt";
         DataImport di = new DataImport(path);
+        Country bestAge = new Country("TBD", "TBD", 42, Double.MIN_VALUE);
+        Country worstPopulation = new Country("TBD", "TBD", Long.MAX_VALUE, 42);
        // di.printFile();
         //System.out.println(di.readLine()); //výpis jednoho řádku
 //TODO: Vypsat informace jednoho řádku
@@ -46,12 +48,25 @@ public class ParseFile {
             System.out.println(oneCountry);
             if ((oneCountry.continent).equals("Europe")){
                 de.writeLine(oneCountry.toString());
+                if (oneCountry.avgAge > bestAge.avgAge){
+                    bestAge = oneCountry;
+                }
+
+                if (oneCountry.population < worstPopulation.population){
+                    worstPopulation = oneCountry;
+                }
+
+                System.out.println(oneCountry);
             }
         }
 
 
-        di.finishImport();
         de.finishExport();
+
+        System.out.println("------");
+        System.out.println("Nejhorsi populace: " + worstPopulation);
+        System.out.println("Nejlepsi doba doziti: " + bestAge);
+        di.finishImport();
 
     }
 
