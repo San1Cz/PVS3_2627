@@ -1,5 +1,9 @@
 package Vlastní.OOP;
 
+import fileworks.DataImport;
+
+import java.util.ArrayList;
+
 public class Track {
     String name;
     int year;
@@ -10,7 +14,7 @@ public class Track {
         this.name = name;
         this.year = year;
         this.rating = rating;
-        this.duration = duration;
+        setDuration(duration);
     }
     public void setDuration(int duration) {
         if (duration < 0 ){
@@ -52,6 +56,24 @@ public class Track {
         return duration;
     }
 
-
+    public static void main(String[] args) {
+        DataImport di = new DataImport("data/tracks.txt");
+        ArrayList<Track> tracks = new ArrayList<>();
+        while(di.hasNext()){
+            String line = di.readLine();
+            String[] tokens = line.split(";");
+            Track song = new Track(
+                    tokens[0],
+                    Integer.parseInt(tokens[1]),
+                    Double.parseDouble(tokens[2]),
+                    Integer.parseInt(tokens[3])
+                    );
+            tracks.add(song);
+        }
+        di.finishImport();
+        //arraylist zaklady:
+        System.out.println(tracks.get(0));
+        System.out.println(tracks.get(tracks.size()-1));
+    }
 
 }
