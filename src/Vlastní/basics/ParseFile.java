@@ -58,6 +58,7 @@ public class ParseFile {
 
             if (oneCountry.population < worstPopulation.population){
                 worstPopulation = oneCountry;
+                System.out.println("new worst population: " + oneCountry);
             }
         }
 
@@ -65,8 +66,9 @@ public class ParseFile {
         de.finishExport();
 
         System.out.println("------");
-        System.out.println("Nejhorsi populace: " + worstPopulation);
+
         System.out.println("Nejlepsi doba doziti: " + bestAge);
+        System.out.println("Nejhorsi populace: " + worstPopulation);
         di.finishImport();
 
     }
