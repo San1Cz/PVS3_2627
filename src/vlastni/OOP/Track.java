@@ -1,4 +1,4 @@
-package Vlastní.OOP;
+package vlastni.OOP;
 
 import fileworks.DataImport;
 

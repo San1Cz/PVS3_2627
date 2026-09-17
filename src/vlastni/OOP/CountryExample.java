@@ -1,5 +1,5 @@
-package Vlastní.OOP;
-import Vlastní.basics.Country;
+package vlastni.OOP;
+import vlastni.basics.Country;
 import fileworks.DataImport;
 
 public class CountryExample {

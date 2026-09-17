@@ -1,4 +1,4 @@
-package Vlastní.OOP;
+package vlastni.OOP;
 
 public class Basics {
     // Metoda co vytváří objekt

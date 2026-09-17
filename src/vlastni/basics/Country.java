@@ -1,4 +1,4 @@
-package Vlastní.basics;
+package vlastni.basics;
 
 public class Country {
     String name, continent;

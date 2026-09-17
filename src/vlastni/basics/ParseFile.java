@@ -1,4 +1,4 @@
-package Vlastní.basics;
+package vlastni.basics;
 
 import fileworks.DataExport;
 import fileworks.DataImport;
