@@ -18,15 +18,25 @@ public class Products {
             ArrayList<Product> products = new ArrayList<>();
             String[]parts;
             DataImport di = new DataImport("data/products.txt");
+            Product product;
             while (di.hasNext()){
                 line = di.readLine();
                 parts = line.split(";");
                 switch (parts.length){
-                    case 4: new Product(parts[0],parts[1], Integer.parseInt(parts[2], (int) Double.parseDouble(parts[3])));
+                    case 4: product = new Product(parts[0],parts[1], Integer.parseInt(parts[2]),  Double.parseDouble(parts[3]));
+                        break;
+                    case 3:  product = new Product(parts[0], parts[1], Integer.parseInt(parts[2]));
+                        break;
+                    case 2: product = new Product(parts[0], parts[1]);
+                        break;
+                    default:
+                        System.out.println("Tento radek nema validni delku: " + line);
+                        product = null;
                         break;
 
 
                 }
+                products.add(product);
 
             }
             di.finishImport();

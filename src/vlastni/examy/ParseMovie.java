@@ -1,4 +1,4 @@
-package vlastni.testy;
+package vlastni.examy;
 
 import fileworks.DataExport;
 import fileworks.DataImport;

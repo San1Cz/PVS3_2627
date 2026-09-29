@@ -1,4 +1,4 @@
-package vlastni.testy;
+package vlastni.examy;
 
 public class Movie {
     String name;
