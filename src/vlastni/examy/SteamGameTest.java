@@ -113,7 +113,7 @@ class Game {
     }
 
     public void setPrice(double price) {
-
+        this.price = price;
     }
 
     public void setNum_reviews_total(int num_reviews_total) {
