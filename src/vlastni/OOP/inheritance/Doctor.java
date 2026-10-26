@@ -8,7 +8,7 @@ public class Doctor {
         this.name = name;
         salary = BASE_SALARY;
     }
-    void Diagnosis(){
+    void diagnose(){
         System.out.println("Figuring out what's wrong");
         salary += 10000;
     }

@@ -7,7 +7,7 @@ public class Surgeon extends Doctor {
         super(name);
         salary += SURGEON_BONUS;
     }
-    void Surgery(){
+    void surgery(){
         System.out.println("Cuttin you open");
         salary += 20000;
     }
