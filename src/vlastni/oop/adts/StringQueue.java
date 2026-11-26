@@ -35,7 +35,7 @@ public class StringQueue {
         return first.data;
     }
     int getSize(){
-       int sizeCounter = 0;
+       int sizeCounter = 1;
        QueueLink helper = first;
         if (helper == null) {
             return sizeCounter;
