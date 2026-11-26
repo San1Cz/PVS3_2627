@@ -1,0 +1,57 @@
+package vlastni.oop.adts;
+
+public class StringQueue {
+    QueueLink first, last;
+
+    //je vubec kontruktor treba?
+    //slusne ano, neni nutne
+
+    void enqueue(String toAdd){
+        //2 varianty, fronta uz neco ma, nebo je prazdna
+        QueueLink link = new QueueLink();
+        link.data = toAdd;
+
+        //pripad 1, fronta je prazdna
+        if (first == null){
+            first = link;
+        } else { //pripad 2: ve fronte uz nekdo je
+            last.next = link;
+        }
+        last = link;
+    }
+
+    String dequeue(){
+        if (first == null){
+            return null;
+        }
+        String toReturn = first.data;
+        first = first.next;
+        return toReturn;
+    }
+    String peek(){
+        if (first == null) {
+            return  null;
+        }
+        return first.data;
+    }
+    int getSize(){
+       int sizeCounter = 0;
+       QueueLink helper = first;
+        if (helper == null) {
+            return sizeCounter;
+        }
+        while (helper.next != null){
+            sizeCounter++;
+            helper = helper.next;
+        }
+        return sizeCounter;
+    }
+    boolean isEmpty(){
+        return first == null;
+    }
+
+
+} class QueueLink{
+    String data;
+    QueueLink next;
+}

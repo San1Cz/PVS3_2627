@@ -28,6 +28,12 @@ public class StringQueue {
         first = first.next;
         return toReturn;
     }
+    String peek(){
+        if (first == null) {
+            return  null;
+        }
+        return first.data;
+    }
 
 
 } class QueueLink{
